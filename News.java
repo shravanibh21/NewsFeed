@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class News {
+public class News implements Comparable<News> {
     String title;
     String author;
     Date datePosted;
@@ -27,19 +27,13 @@ public class News {
         this.location = lo;
     }
 
-    class Date {
-        int month;
-        int day;
-        int year;
+    public void update(int e) {
+        this.engagementScore = e;
+        this.lastUpdated = Calendar.getInstance().getTime();
+    }
 
-        public Date() {
-            this(0, 0, 0);
-        }
-
-        public Date(int m, int d, int y) {
-            this.month = m;
-            this.day = d;
-            this.year = y;
-        }
+    public int compareTo(News other) {
+        return lastUpdated.compareTo(lastUpdated);
     }
 }
+
