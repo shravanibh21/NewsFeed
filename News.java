@@ -12,7 +12,7 @@ public class News implements Comparable<News> {
     private String location;
 
     public News() {
-      //  this("", "", new Date(), new HashMap<>(), 0, new Date(), 0, 0, "");
+        this("", "", Calendar.getInstance().getTime(), new HashMap<>(), 0, Calendar.getInstance().getTime(), 0, 0, "");
     }
 
     public News(String t, String a, Date d, Map<String, User> u, int e, Date l, int ia, int io, String lo) {
@@ -25,6 +25,77 @@ public class News implements Comparable<News> {
         this.intendedAge = ia;
         this.intendedOccup = io;
         this.location = lo;
+    }
+
+    public void setTitle(String t) {
+        this.title = t;
+    }
+
+    public void setAuthor(String a) {
+        this.author = a;
+    }
+
+    public void setDatePosted(Date d) {
+        this.datePosted = d;
+    }
+
+    public void addUser(String name, User obj) {
+        this.usersVisited.put(name, obj);
+    }
+    
+    public void setEngagementScore(int e) {
+        this.engagementScore = e;
+    }
+
+    public void setIntendedAge(int a) {
+        this.intendedAge = a;
+    }
+
+    public void setIntendedOccup(int o) {
+        this.intendedOccup = o;
+    }
+
+    public void setLocation(String l) {
+        this.location = l;
+    }
+
+    public String getTitle() {
+        return this.title;
+    }
+
+    public String getAuthor() {
+        return this.author;
+    }
+
+    public Date getDatePosted() {
+        return this.datePosted;
+    }
+
+    public Set<String> getUserSet() {
+        return usersVisited.keySet();
+    }
+
+    public User getUser(String name) {
+        if (this.usersVisited.keySet().contains(name)){
+            return this.usersVisited.get(name);
+        }
+        return null;
+    }
+
+    public int getEngagementScore() {
+        return this.engagementScore;
+    }
+
+    public int getIntendedAge() {
+        return this.intendedAge;
+    }
+
+    public int getIntendedOccup() {
+        return this.intendedOccup;
+    }
+
+    public String getLocation() {
+        return this.location;
     }
 
     public void update(int e) {
