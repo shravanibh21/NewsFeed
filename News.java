@@ -106,5 +106,11 @@ public class News implements Comparable<News> {
     public int compareTo(News other) {
         return lastUpdated.compareTo(lastUpdated);
     }
+
+    // public recordVisit(String userName, User user) {
+    //     if(this.usersVisited.keySet().contains(userName) ) {
+    //         usersVisited.get(userName).scoreBoard
+    //     }
+    // }
 }
 
