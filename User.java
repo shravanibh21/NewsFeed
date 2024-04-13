@@ -1,14 +1,14 @@
 public class User {
-    String name;
-    String userName;
-    String userLocation;
-    String userOccup;
-    int userAge;
-    Map<String, Integer> scoreBoard;
-    Map<String, List<String>> selectedInterests;
-    Set<String> tags;
+    private String name;
+    private String userName;
+    private String userLocation;
+    private String userOccup;
+    private int userAge;
+    private Map<String, Integer> scoreBoard; //activties and counts/isTrue values
+    private Map<String, List<String>> selectedInterests; //based on selections from onboarding
+    private Set<String> tags; //tags user has interacted with the most.
 
-    //Feed feed = new Feed();
+    Feed feed = new Feed();
 
     public User(String name, String userName, String loc, String occup, int age) {
         this.name = name;
@@ -16,6 +16,9 @@ public class User {
         this.userLocation = loc;
         this.userOccup = occup;
         this.userAge = age;
+        this.scoreBoard = new HashMap<String, Integer>(); 
+        this.selectedInterests = new HashMap<String, List<String>>();
+        this.tags = new HashSet<String>();
     }
 
 }

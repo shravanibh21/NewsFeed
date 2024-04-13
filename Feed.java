@@ -11,5 +11,23 @@ package com.mycompany.feed;
  */
 public class Feed {
 
-    
+    private Stack<News> feed;
+    //user info
+    private int userAge;
+    private String userOccup;
+    private String userLoc;
+    private Map<String, Integer> scoreBoard;
+    private Map<String, List<String>> selectedInterests; 
+    private Set<String> Usertags;
+
+    public Feed(int age, String occup, String loc, Map<String, Integer> scoreBoard, Map<String, List<String>> selectedInterests, Set<String> tags) {
+        this.feed = new Stack<News>();
+        this.userAge = age;
+        this.userOccup = occup;
+        this.userLoc = loc;
+        this.scoreBoard = scoreBoard;
+        this.selectedInterests = selectedInterests;
+        this.Usertags = tags;
+    }
+
 }
