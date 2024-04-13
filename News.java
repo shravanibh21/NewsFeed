@@ -27,19 +27,7 @@ public class News {
         this.location = lo;
     }
 
-    class Date {
-        int month;
-        int day;
-        int year;
+    public void update() {
 
-        public Date() {
-            this(0, 0, 0);
-        }
-
-        public Date(int m, int d, int y) {
-            this.month = m;
-            this.day = d;
-            this.year = y;
-        }
     }
 }
