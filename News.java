@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class News {
+public class News implements Comparable<News> {
     String title;
     String author;
     Date datePosted;
