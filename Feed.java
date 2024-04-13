@@ -31,4 +31,9 @@ public class Feed {
         this.Usertags = tags;
     }
 
+    //Main algorithm to decide which news to include in the user's feed.
+    public void analyzeNews() {
+        
+    }
+
 }

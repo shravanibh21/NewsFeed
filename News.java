@@ -14,6 +14,7 @@ public class News implements Comparable<News> {
 
     public News() {
         this("", "", Calendar.getInstance().getTime(), new HashMap<>(), 0, Calendar.getInstance().getTime(), 0, 0, "");
+        NewsDatabase.addNews(this);
     }
 
     public News(String t, String a, Date d, Map<String, User> u, int e, Date l, int ia, int io, String lo, Set<String> tags) {
@@ -27,6 +28,8 @@ public class News implements Comparable<News> {
         this.intendedOccup = io;
         this.location = lo;
         this.tags = tags;
+        
+        NewsDatabase.addNews(this);
     }
 
     public int calculateEngagement() {

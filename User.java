@@ -27,13 +27,13 @@ public class User {
         scoreBoard.put(pollFriends, 0); //+6
         scoreBoard.put(takes, 0); //+4
         scoreBaord.put(pollVotes, 0); //+4
-        scoreBoard.put(like, 0); //acts as a boolean +2
-        scoreBoard.put(dislike, 0); //acts a a boolean -5
+        scoreBoard.put(isLiked, 0); //acts as a boolean +2
+        scoreBoard.put(isDisliked, 0); //acts a a boolean -5
 
         this.selectedInterests = new HashMap<String, List<String>>();
         this.tags = new HashSet<String>();
         this.feed = new Feed(userAge, userOccup, userLocation, scoreBoard, selectedInterests, tags);
     }
-    
+
 
 }
