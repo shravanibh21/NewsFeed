@@ -1,15 +1,15 @@
 import java.util.*;
 
 public class News implements Comparable<News> {
-    String title;
-    String author;
-    Date datePosted;
-    Map<String, User> usersVisited;
-    int engagementScore;
-    Date lastUpdated;
-    int intendedAge;
-    int intendedOccup;
-    String location;
+    private String title;
+    private String author;
+    private Date datePosted;
+    private Map<String, User> usersVisited;
+    private int engagementScore;
+    private Date lastUpdated;
+    private int intendedAge;
+    private int intendedOccup;
+    private String location;
 
     public News() {
       //  this("", "", new Date(), new HashMap<>(), 0, new Date(), 0, 0, "");
