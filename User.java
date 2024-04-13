@@ -20,14 +20,20 @@ public class User {
         this.userAge = age;
         this.scoreBoard = new HashMap<String, Integer>(); 
         //initialize scoreboard
-        scoreBoard.put(Revists, 0);
+        scoreBoard.put(revists, 0); //+10
+        scoreBoard.put(shadeTaps, 0); //+8
+        scoreBoard.put(readMoreTaps, 0); //+8
+        scoreBoard.put(shares, 0); //+6
+        scoreBoard.put(pollFriends, 0); //+6
+        scoreBoard.put(takes, 0); //+4
+        scoreBaord.put(pollVotes, 0); //+4
+        scoreBoard.put(like, 0); //acts as a boolean +2
+        scoreBoard.put(dislike, 0); //acts a a boolean -5
+
         this.selectedInterests = new HashMap<String, List<String>>();
         this.tags = new HashSet<String>();
         this.feed = new Feed(userAge, userOccup, userLocation, scoreBoard, selectedInterests, tags);
     }
-
-    public void incrementVisit() {
-        this.scoreBoard.put("visit", this.scoreBoard.get("visit") + 1);
-    }
+    
 
 }

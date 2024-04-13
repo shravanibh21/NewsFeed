@@ -10,53 +10,45 @@ public class News implements Comparable<News> {
     private int intendedAge;
     private int intendedOccup;
     private String location;
+    private Set<String> tags;
 
     public News() {
         this("", "", Calendar.getInstance().getTime(), new HashMap<>(), 0, Calendar.getInstance().getTime(), 0, 0, "");
     }
 
-    public News(String t, String a, Date d, Map<String, User> u, int e, Date l, int ia, int io, String lo) {
+    public News(String t, String a, Date d, Map<String, User> u, int e, Date l, int ia, int io, String lo, Set<String> tags) {
         this.title = t;
         this.author = a;
         this.datePosted = d;
         this.usersVisited = u;
-        this.engagementScore = e;
+        this.engagementScore = calculateEngagement();
         this.lastUpdated = l;
         this.intendedAge = ia;
         this.intendedOccup = io;
         this.location = lo;
+        this.tags = tags;
     }
 
-    public void setTitle(String t) {
-        this.title = t;
+    public int calculateEngagement() {
+        int score = (this.usersVisited.get(revists)*10) + (this.usersVisited.get(shadeTaps)*8) + (this.usersVisited(readMoreTaps)*8) +
+            (this.usersVisited.get(shares)*6) + (this.usersVisited.get(pollFriends)*6) + (this.usersVisited.get(takes)*4) + (this.usersVisited.get(pollVotes)*4);
+        
+        if(isLiked == 1) score++;
+        if(isDisliked == 1) score++;
+
+        return score;
     }
 
-    public void setAuthor(String a) {
-        this.author = a;
-    }
-
-    public void setDatePosted(Date d) {
-        this.datePosted = d;
-    }
-
-    public void addUser(String name, User obj) {
-        this.usersVisited.put(name, obj);
+    public void userVisited(User user, String name) {
+        if (this.usersVisited.keySet().contains(name)){
+            this.usersVisited.get(name).incrementVisit();
+            return;
+        }
+        this.usersVisited.put(name, user);
     }
     
     public void setEngagementScore(int e) {
         this.engagementScore = e;
-    }
-
-    public void setIntendedAge(int a) {
-        this.intendedAge = a;
-    }
-
-    public void setIntendedOccup(int o) {
-        this.intendedOccup = o;
-    }
-
-    public void setLocation(String l) {
-        this.location = l;
     }
 
     public String getTitle() {
@@ -73,14 +65,6 @@ public class News implements Comparable<News> {
 
     public Set<String> getUserSet() {
         return usersVisited.keySet();
-    }
-
-    public void userVisited(User user, String name) {
-        if (this.usersVisited.keySet().contains(name)){
-            this.usersVisited.get(name).incrementVisit();
-            return;
-        }
-        this.usersVisited.put(name, user);
     }   
 
     public User getUser(String name) {
@@ -115,8 +99,6 @@ public class News implements Comparable<News> {
         return lastUpdated.compareTo(lastUpdated);
     }
 
-    public int likeliness(User user) {
-        return 0;
-    }
+   
 }
 
