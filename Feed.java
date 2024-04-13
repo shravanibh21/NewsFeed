@@ -5,12 +5,15 @@
 
 package com.mycompany.feed;
 
+import java.util.*;
 /**
  *
  * @author shrav
  */
 public class Feed {
 
+    public static void main(String[] args) {
+        System.out.println("ur mother");
     private Stack<News> feed;
     //user info
     private int userAge;
