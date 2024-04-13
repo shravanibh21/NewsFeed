@@ -12,8 +12,6 @@ import java.util.*;
  */
 public class Feed {
 
-    public static void main(String[] args) {
-        System.out.println("ur mother");
     private Stack<News> feed;
     //user info
     private int userAge;
