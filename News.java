@@ -75,9 +75,16 @@ public class News implements Comparable<News> {
         return usersVisited.keySet();
     }
 
-    public User getUser(String name) {
+    public void userVisited(User user, String name) {
         if (this.usersVisited.keySet().contains(name)){
             this.usersVisited.get(name).incrementVisit();
+            return;
+        }
+        this.usersVisited.put(name, user);
+    }   
+
+    public User getUser(String name) {
+        if (this.usersVisited.keySet().contains(name)){
             return this.usersVisited.get(name);
         }
         return null;
