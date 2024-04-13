@@ -26,4 +26,8 @@ public class User {
         this.feed = new Feed(userAge, userOccup, userLocation, scoreBoard, selectedInterests, tags);
     }
 
+    public void incrementVisit() {
+        this.scoreBoard.put("visit", this.scoreBoard.get("visit") + 1);
+    }
+
 }

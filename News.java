@@ -75,6 +75,14 @@ public class News implements Comparable<News> {
         return usersVisited.keySet();
     }
 
+    public void userVisited(User user, String name) {
+        if (this.usersVisited.keySet().contains(name)){
+            this.usersVisited.get(name).incrementVisit();
+            return;
+        }
+        this.usersVisited.put(name, user);
+    }   
+
     public User getUser(String name) {
         if (this.usersVisited.keySet().contains(name)){
             return this.usersVisited.get(name);
@@ -107,10 +115,8 @@ public class News implements Comparable<News> {
         return lastUpdated.compareTo(lastUpdated);
     }
 
-    // public recordVisit(String userName, User user) {
-    //     if(this.usersVisited.keySet().contains(userName) ) {
-    //         usersVisited.get(userName).scoreBoard
-    //     }
-    // }
+    public int likeliness(User user) {
+        return 0;
+    }
 }
 
