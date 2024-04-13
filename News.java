@@ -12,7 +12,7 @@ public class News implements Comparable<News> {
     String location;
 
     public News() {
-        this("", "", new Date(), new HashMap<>(), 0, new Date(), 0, 0, "");
+        this("", "", new Date(), new HashMap<>(), 0, Calendar.getInstance().getTime(), 0, 0, "");
     }
 
     public News(String t, String a, Date d, Map<String, User> u, int e, Date l, int ia, int io, String lo) {
@@ -27,8 +27,9 @@ public class News implements Comparable<News> {
         this.location = lo;
     }
 
-    public void update() {
-        
+    public void update(int e) {
+        this.engagementScore = e;
+        this.lastUpdated = Calendar.getInstance().getTime();
     }
 
     public int compareTo(News other) {
