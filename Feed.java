@@ -11,7 +11,5 @@ package com.mycompany.feed;
  */
 public class Feed {
 
-    public static void main(String[] args) {
-        System.out.println("Test commit");
-    }
+    
 }
