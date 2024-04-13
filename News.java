@@ -28,6 +28,11 @@ public class News {
     }
 
     public void update() {
+        
+    }
 
+    public int compareTo(News other) {
+        return lastUpdated.compareTo(lastUpdated);
     }
 }
+
