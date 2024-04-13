@@ -77,6 +77,7 @@ public class News implements Comparable<News> {
 
     public User getUser(String name) {
         if (this.usersVisited.keySet().contains(name)){
+            this.usersVisited.get(name).incrementVisit();
             return this.usersVisited.get(name);
         }
         return null;
@@ -105,6 +106,10 @@ public class News implements Comparable<News> {
 
     public int compareTo(News other) {
         return lastUpdated.compareTo(lastUpdated);
+    }
+
+    public int likeliness(User user) {
+        return 0;
     }
 }
 
