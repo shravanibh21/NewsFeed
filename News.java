@@ -12,6 +12,8 @@ public class News implements Comparable<News> {
     private String location;
     private Set<String> tags;
 
+    int scoreForFeed;
+
     public News() {
         this("", "", Calendar.getInstance().getTime(), new HashMap<>(), 0, Calendar.getInstance().getTime(), 0, 0, "");
         NewsDatabase.addNews(this);
@@ -28,10 +30,11 @@ public class News implements Comparable<News> {
         this.intendedOccup = io;
         this.location = lo;
         this.tags = tags;
-        
+        this.scoreForFeed = 0;
         NewsDatabase.addNews(this);
     }
 
+    //Calcualates t
     public int calculateEngagement() {
         int score = (this.usersVisited.get(revists)*10) + (this.usersVisited.get(shadeTaps)*8) + (this.usersVisited(readMoreTaps)*8) +
             (this.usersVisited.get(shares)*6) + (this.usersVisited.get(pollFriends)*6) + (this.usersVisited.get(takes)*4) + (this.usersVisited.get(pollVotes)*4);
@@ -93,11 +96,17 @@ public class News implements Comparable<News> {
         return this.location;
     }
 
+    public Set<String> getTags() {
+        return this.tags;
+    }
     public void update(int e) {
         this.engagementScore = e;
         this.lastUpdated = Calendar.getInstance().getTime();
     }
 
+    public Date getLastUpdated() {
+        return this.lastUpdated;
+    }
     public int compareTo(News other) {
         return lastUpdated.compareTo(lastUpdated);
     }
