@@ -28,7 +28,7 @@ public class User {
         scoreBoard.put(takes, 0); //+4
         scoreBaord.put(pollVotes, 0); //+4
         scoreBoard.put(isLiked, 0); //acts as a boolean +2
-        scoreBoard.put(isDisliked, 0); //acts a a boolean -5
+        scoreBoard.put(swipeLeft, 0); //acts a a boolean -5
 
         this.selectedInterests = new HashMap<String, List<String>>();
         this.tags = new HashSet<String>();

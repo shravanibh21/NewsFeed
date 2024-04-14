@@ -31,7 +31,7 @@ public class Feed {
 
     //Main algorithm to decide which news to include in the user's feed.
     /*This is a weighted score based mock optimization algorithm that takes into account if the intended age,
-     intended occupation, location, and content tags match with those of the users. Age and occupation. 
+     intended occupation, location, and content tags, and content engagement match with those of the users. 
 
      If the added scores for a given news meet a certain threshold, then it can be added to the feed stack
      which will be returned to the user as their customized feed. Here we consider a dummy threshold of 100.
@@ -49,6 +49,7 @@ public class Feed {
                 }
             }
 
+            scoreForFeed += curr.getEngagementScore();
             if(curr.scoreFeed >= 100) feed.push(curr); //meets threshold, push to stack.
         }
 

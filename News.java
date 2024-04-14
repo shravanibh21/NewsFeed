@@ -39,8 +39,8 @@ public class News implements Comparable<News> {
         int score = (this.usersVisited.get(revists)*10) + (this.usersVisited.get(shadeTaps)*8) + (this.usersVisited(readMoreTaps)*8) +
             (this.usersVisited.get(shares)*6) + (this.usersVisited.get(pollFriends)*6) + (this.usersVisited.get(takes)*4) + (this.usersVisited.get(pollVotes)*4);
         
-        if(isLiked == 1) score++;
-        if(isDisliked == 1) score++;
+        if(this.usersVisited.get(isLiked) == 1) score++;
+        if(this.userVisisted.get(swipeLeft) == 1) score -= 5;
 
         return score;
     }
